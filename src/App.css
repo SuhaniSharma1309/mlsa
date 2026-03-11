@@ -3,26 +3,28 @@
   min-height: 100vh;
 }
 
+/* ------------------------------------------------ */
+/* VITE DEFAULT STYLES */
+/* ------------------------------------------------ */
+
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -31,10 +33,406 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
-
 .read-the-docs {
   color: #888;
+}
+
+/* ------------------------------------------------ */
+/* PROJECTS SECTION */
+/* ------------------------------------------------ */
+
+.projects-section {
+
+  background: linear-gradient(
+    135deg,
+    #050308 0%,
+    #0b0716 40%,
+    #020104 100%
+  );
+
+  color: white;
+  padding: 120px 20px;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------ */
+/* SECTION TITLE */
+/* ------------------------------------------------ */
+
+.projects-heading {
+
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 90px;
+
+  letter-spacing: 1px;
+  text-align: center;
+  position: relative;
+
+  text-shadow: 0 2px 25px rgba(168,85,247,0.4);
+}
+
+.projects-heading span {
+
+  background: linear-gradient(
+    90deg,
+    #a855f7,
+    #6366f1
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects-heading::after {
+
+  content: "";
+  width: 120px;
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    #a855f7,
+    #6366f1
+  );
+
+  display: block;
+  margin: 18px auto 0;
+  border-radius: 2px;
+}
+
+/* ------------------------------------------------ */
+/* CAROUSEL */
+/* ------------------------------------------------ */
+
+.carousel {
+
+  position: relative;
+  width: 100%;
+  height: 480px;
+
+  perspective: 1200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------------------------------ */
+/* NAVIGATION ARROWS */
+/* ------------------------------------------------ */
+
+.carousel-nav {
+  position: relative;
+}
+
+.nav-btn {
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: #0f0a1f;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  padding: 12px;
+  border-radius: 50%;
+
+  font-size: 18px;
+  color: white;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.nav-btn.left {
+  left: 40px;
+}
+
+.nav-btn.right {
+  right: 40px;
+}
+
+.nav-btn:hover {
+
+  background: #a855f7;
+
+  transform: translateY(-50%) scale(1.1);
+
+  box-shadow: 0 0 20px rgba(168,85,247,0.6);
+}
+
+/* ------------------------------------------------ */
+/* PROJECT CARD */
+/* ------------------------------------------------ */
+
+.card {
+
+  position: absolute;
+
+  width: 270px;
+  height: 360px;
+
+  background: linear-gradient(
+    160deg,
+    #0c0818,
+    #05030d
+  );
+
+  border-radius: 16px;
+
+   /* PREMIUM BORDER */
+
+  border: 1px solid rgba(168,85,247,0.35);
+
+  overflow: hidden;
+  transition: all 0.6s ease;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.8),
+    0 0 10px rgba(168,85,247,0.2);
+}
+
+/* glow hover */
+.card:hover {
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.8),
+    0 0 40px rgba(168,85,247,0.5);
+}
+
+/* ------------------------------------------------ */
+/* CARD CONTENT */
+/* ------------------------------------------------ */
+
+.card-content {
+
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
+  /* align-items: center; */
+}
+
+/* TITLE */
+
+/* .card-content h3 {
+
+  font-size: 17px;
+  font-weight: 600;
+
+  color: #f1f5f9;
+} */
+ .card-content h3 {
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #f8fafc;
+
+  letter-spacing: 0.5px;
+
+  text-shadow:
+    0 0 6px rgba(168,85,247,0.4),
+    0 0 14px rgba(99,102,241,0.2);
+
+  position: relative;
+
+  margin-bottom: 8px;
+}
+
+.card-content h3::after {
+
+  content: "";
+
+  display: block;
+
+  width: 50px;
+  height: 3px;
+
+  margin: 8px auto 0 auto;   /* centers the glowing line */
+
+  border-radius: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #a855f7,
+    #6366f1
+  );
+
+  box-shadow:
+    0 0 10px rgba(168,85,247,0.7),
+    0 0 20px rgba(99,102,241,0.4);
+
+  transition: width 0.3s ease;
+}
+.card.active h3::after {
+
+  width: 80px;
+
+  box-shadow:
+    0 0 15px rgba(168,85,247,0.9),
+    0 0 30px rgba(99,102,241,0.6);
+}
+
+/* DESCRIPTION */
+
+.project-description {
+
+  font-size: 13px;
+  color: #cbd5f5;
+
+  line-height: 1.45;
+}
+
+/* TEAM */
+
+.project-team {
+
+  font-size: 12px;
+  color: #a1a1aa;
+}
+
+/* ------------------------------------------------ */
+/* ICONS */
+/* ------------------------------------------------ */
+
+.icons {
+
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+
+  gap: 18px;
+
+  font-size: 22px;
+
+  margin-top: 20px;
+}
+
+.icons a {
+
+  color: white;
+  transition: all 0.25s ease;
+}
+
+.icons a:hover {
+
+  color: #a855f7;
+  transform: scale(1.2);
+}
+
+/* ------------------------------------------------ */
+/* SEE MORE CARD */
+/* ------------------------------------------------ */
+
+.see-more-card {
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  color: #a855f7;
+
+  background: linear-gradient(
+    160deg,
+    #0c0818,
+    #05030d
+  );
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(168,85,247,0.35);
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.see-more-card:hover {
+
+  background: rgba(168,85,247,0.1);
+  transform: scale(1.05);
+
+  box-shadow: 0 0 30px rgba(168,85,247,0.4);
+}
+
+/* see more arrow */
+
+.see-more-content {
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.see-arrow {
+
+  transition: transform 0.3s ease;
+}
+
+.see-more-card:hover .see-arrow {
+
+  transform: translateX(6px);
+}
+
+/* ------------------------------------------------ */
+/* CARD POSITIONS */
+/* ------------------------------------------------ */
+
+.card.active {
+
+  transform: translateX(0) scale(1.15);
+  z-index: 5;
+}
+
+.card.left1 {
+
+  transform: translateX(-220px) scale(0.9) rotateY(25deg);
+  opacity: 0.85;
+  z-index: 4;
+}
+
+.card.left2 {
+
+  transform: translateX(-420px) scale(0.75) rotateY(35deg);
+  opacity: 0.55;
+  z-index: 3;
+}
+
+.card.right1 {
+
+  transform: translateX(220px) scale(0.9) rotateY(-25deg);
+  opacity: 0.85;
+  z-index: 4;
+}
+
+.card.right2 {
+
+  transform: translateX(420px) scale(0.75) rotateY(-35deg);
+  opacity: 0.55;
+  z-index: 3;
+}
+
+/* hidden cards */
+
+.card.hidden {
+
+  opacity: 0;
+  transform: scale(0.5);
 }
